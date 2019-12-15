@@ -38,20 +38,20 @@ else()
   message (FATAL_ERROR "must use conan")
 endif()
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/)
+
 find_package(cmake_platform_detection REQUIRED)
 run_cmake_platform_detection()
+# NOTE: perform platform checks before everything else
+include(cmake/PlatformChecks)
 
 find_package(cmake_build_options REQUIRED)
 setup_default_build_type(RELEASE)
 setup_cmake_build_options(RELEASE DEBUG)
 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/)
-
 set(ICU_PARENT_FULL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/)
 
 set(ICU_FULL_DIR ${ICU_PARENT_FULL_DIR}third_party/icu/)
-
-include(cmake/PlatformChecks)
 
 include(cmake/CommonOptions)
 
