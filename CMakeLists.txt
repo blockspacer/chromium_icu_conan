@@ -171,6 +171,13 @@ endif(NOT EXISTS "${ICU_FULL_DIR}source/common")
     list(APPEND ICU_PUBLIC_DEFINES
       U_ENABLE_DYLOAD=0
       U_CHECK_DYLOAD=0
+      UCONFIG_ONLY_HTML_CONVERSION=1
+      # UCONFIG_NO_CONVERSION=1 # see UConverter & LIBXML_ICU_ENABLED
+      UCONFIG_NO_IDNA=1 # see UIDNA_INFO_INITIALIZER in url/url_idna_icu.cc
+      # UCONFIG_NO_NORMALIZATION=1 # NOTE: also disables break iteration!
+      UCONFIG_NO_REGULAR_EXPRESSIONS=1
+      UCONFIG_NO_TRANSLITERATION=1
+      UCONFIG_NO_SERVICE=1
     )
   endif(TARGET_EMSCRIPTEN)
 
@@ -253,13 +260,6 @@ endif(DISABLE_FORMATTING)
     UCONFIG_NO_FILE_IO=1
     # see http://userguide.icu-project.org/packaging
     UCONFIG_NO_LEGACY_CONVERSION=1
-    UCONFIG_ONLY_HTML_CONVERSION=1
-    # UCONFIG_NO_CONVERSION=1 # see UConverter & LIBXML_ICU_ENABLED
-    UCONFIG_NO_IDNA=1 # see UIDNA_INFO_INITIALIZER in url/url_idna_icu.cc
-    # UCONFIG_NO_NORMALIZATION=1 # NOTE: also disables break iteration!
-    UCONFIG_NO_REGULAR_EXPRESSIONS=1
-    UCONFIG_NO_TRANSLITERATION=1
-    UCONFIG_NO_SERVICE=1
     #
     # If U_NO_DEFAULT_INCLUDE_UTF_HEADERS is 0 then utf.h is
     # included by utypes.h and itself includes utf8.h

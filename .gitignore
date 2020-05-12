@@ -45,3 +45,5 @@ tmp/
 
 # emacs
 *~
+*.directory
+/third_party/icu/build
