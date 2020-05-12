@@ -185,12 +185,14 @@ if(DISABLE_COLLATION)
   list(APPEND ICU_PUBLIC_DEFINES
     UCONFIG_NO_COLLATION=1 # see icu::Collator::TERTIARY in base/i18n
   )
+  message(STATUS "COLLATION DISABLED")
 endif(DISABLE_COLLATION)
 
 if(DISABLE_FORMATTING)
   list(APPEND ICU_PUBLIC_DEFINES
     UCONFIG_NO_FORMATTING=1 # see icu::NumberFormat in base/i18n
   )
+  message(STATUS "FORMATTING DISABLED")
 endif(DISABLE_FORMATTING)
 
 # # TODO https://github.com/mbbill/JSC.js
