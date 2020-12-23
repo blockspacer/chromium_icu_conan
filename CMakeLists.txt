@@ -348,6 +348,8 @@ if(DISABLE_COLLATION)
     UCONFIG_NO_COLLATION=1 # see icu::Collator::TERTIARY in base/i18n
   )
   message(STATUS "COLLATION DISABLED")
+else()
+  message(STATUS "COLLATION ENABLED")
 endif(DISABLE_COLLATION)
 
 if(DISABLE_FORMATTING)
@@ -355,6 +357,8 @@ if(DISABLE_FORMATTING)
     UCONFIG_NO_FORMATTING=1 # see icu::NumberFormat in base/i18n
   )
   message(STATUS "FORMATTING DISABLED")
+else()
+  message(STATUS "FORMATTING ENABLED")
 endif(DISABLE_FORMATTING)
 
 # # TODO https://github.com/mbbill/JSC.js
