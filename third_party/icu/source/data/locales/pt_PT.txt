@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 pt_PT{
     Ellipsis{
         final{"{0}…"}
@@ -8,10 +9,10 @@ pt_PT{
         word-initial{"… {0}"}
         word-medial{"{0} … {1}"}
     }
-    ExemplarCharactersNumbers{"[  \\- , % ‰ + 0 1 2 3 4 5 6 7 8 9]"}
+    ExemplarCharactersNumbers{"[  \\- ‑ , % ‰ + 0 1 2 3 4 5 6 7 8 9]"}
     ExemplarCharactersPunctuation{
-        "[\\- ‐ – — , ; \\: ! ? . … ' \u0022 “ ” « » ( ) \\[ \\] § @ * / \\& # † ‡ ′ "
-        "″]"
+        "[\\- ‐ ‑ – — , ; \\: ! ? . … ' \u0022 “ ” « » ( ) \\[ \\] § @ * / \\& # † ‡ "
+        "′ ″]"
     }
     MoreInformation{"?"}
     NumberElements{
@@ -28,7 +29,6 @@ pt_PT{
             patterns{
                 accountingFormat{"#,##0.00 ¤;(#,##0.00 ¤)"}
                 currencyFormat{"#,##0.00 ¤"}
-                decimalFormat{"#,##0.###"}
             }
             patternsLong{
                 decimalFormat{
@@ -161,9 +161,8 @@ pt_PT{
                 }
             }
             symbols{
+                approximatelySign{"~"}
                 group{" "}
-                minusSign{"-"}
-                plusSign{"+"}
             }
         }
         minimalPairs{
@@ -174,7 +173,6 @@ pt_PT{
         minimumGroupingDigits{"2"}
         native{"latn"}
     }
-    Version{"2.1.49.82"}
     calendar{
         buddhist{
             DateTimePatterns{
@@ -277,6 +275,44 @@ pt_PT{
                 yyyyQQQQ{"QQQQ 'de' y G"}
             }
             intervalFormats{
+                Gy{
+                    G{"y G – y G"}
+                    y{"y – y G"}
+                }
+                GyM{
+                    G{"MM/y GGGGG – MM/y GGGGG"}
+                    M{"MM/y – MM/y GGGGG"}
+                    y{"MM/y – MM/y GGGGG"}
+                }
+                GyMEd{
+                    G{"E, d/MM/y GGGGG – E, d/MM/y GGGGG"}
+                    M{"E, d/MM/y – E, d/MM/y GGGGG"}
+                    d{"E, d/MM/y – E, d/MM/y GGGGG"}
+                    y{"E, d/MM/y – E, d/MM/y GGGGG"}
+                }
+                GyMMM{
+                    G{"MMM y G – MMM y G"}
+                    M{"MMM – MMM y G"}
+                    y{"MMM y – MMM y G"}
+                }
+                GyMMMEd{
+                    G{"E, d 'de' MMMM, y G – E, d 'de' MMMM, y G"}
+                    M{"E, d 'de' MMMM – E, d 'de' MMMM, y G"}
+                    d{"E, d 'de' MMMM – E, d 'de' MMMM, y G"}
+                    y{"E, d 'de' MMMM, y – E, d 'de' MMMM, y G"}
+                }
+                GyMMMd{
+                    G{"d 'de' MMMM, y G – d 'de' MMMM, y G"}
+                    M{"d 'de' MMMM – d 'de' MMMM, y G"}
+                    d{"d – d 'de' MMMM, y G"}
+                    y{"d 'de' MMMM, y – d 'de' MMMM, y G"}
+                }
+                GyMd{
+                    G{"d/MM/y GGGGG – d/MM/y GGGGG"}
+                    M{"d/MM/y – d/MM/y GGGGG"}
+                    d{"d/MM/y – d/MM/y GGGGG"}
+                    y{"d/MM/y – d/MM/y GGGGG"}
+                }
                 M{
                     M{"MM–MM"}
                 }
@@ -382,6 +418,15 @@ pt_PT{
                         "S",
                         "S",
                     }
+                    short{
+                        "dom.",
+                        "seg.",
+                        "ter.",
+                        "qua.",
+                        "qui.",
+                        "sex.",
+                        "sáb.",
+                    }
                 }
                 stand-alone{
                     abbreviated{
@@ -406,21 +451,12 @@ pt_PT{
             }
             dayPeriod{
                 format{
-                    abbreviated{
-                        noon{"meio-dia"}
-                    }
                     narrow{
                         afternoon1{"tarde"}
                         evening1{"noite"}
                         midnight{"meia-noite"}
                         morning1{"manhã"}
                         night1{"madrugada"}
-                        noon{"meio-dia"}
-                    }
-                    wide{
-                        afternoon1{"da tarde"}
-                        evening1{"da noite"}
-                        morning1{"da manhã"}
                         noon{"meio-dia"}
                     }
                 }
@@ -446,6 +482,30 @@ pt_PT{
                 }
             }
             intervalFormats{
+                GyMEd{
+                    G{"E, d/M/y GGGGG – E, d/M/y GGGGG"}
+                    M{"E, d/M/y – E, d/M/y GGGGG"}
+                    d{"E, d/M/y – E, d/M/y GGGGG"}
+                    y{"E, d/M/y – E, d/M/y GGGGG"}
+                }
+                GyMMMEd{
+                    G{"E, d MMM y G – E, d MMM y G"}
+                    M{"E, d MMM – E, d MMM y G"}
+                    d{"E, d MMM – E, d MMM y G"}
+                    y{"E, d MMM y – E, d MMM y G"}
+                }
+                GyMMMd{
+                    G{"d MMM y G – d MMM y G"}
+                    M{"d MMM – d MMM y G"}
+                    d{"d – d MMM y G"}
+                    y{"d MMM y – d MMM y G"}
+                }
+                GyMd{
+                    G{"d/M/y GGGGG – d/M/y GGGGG"}
+                    M{"d/M/y – d/M/y GGGGG"}
+                    d{"d/M/y – d/M/y GGGGG"}
+                    y{"d/M/y – d/M/y GGGGG"}
+                }
                 H{
                     H{"HH–HH"}
                 }
@@ -500,24 +560,6 @@ pt_PT{
                 }
                 yMMMd{
                     d{"d–d 'de' MMM 'de' y"}
-                }
-            }
-            monthNames{
-                format{
-                    wide{
-                        "janeiro",
-                        "fevereiro",
-                        "março",
-                        "abril",
-                        "maio",
-                        "junho",
-                        "julho",
-                        "agosto",
-                        "setembro",
-                        "outubro",
-                        "novembro",
-                        "dezembro",
-                    }
                 }
             }
             quarters{
@@ -646,13 +688,6 @@ pt_PT{
     }
     fields{
         day{
-            relative{
-                "-1"{"ontem"}
-                "-2"{"anteontem"}
-                "0"{"hoje"}
-                "1"{"amanhã"}
-                "2"{"depois de amanhã"}
-            }
             relativeTime{
                 future{
                     one{"dentro de {0} dia"}
@@ -662,9 +697,9 @@ pt_PT{
         }
         day-narrow{
             relative{
-                "-2"{"anteontem"}
+                "-1"{"ontem"}
                 "0"{"hoje"}
-                "2"{"depois de amanhã"}
+                "1"{"amanhã"}
             }
             relativeTime{
                 future{
@@ -672,16 +707,16 @@ pt_PT{
                     other{"+{0} dias"}
                 }
                 past{
-                    one{"há {0} dias"}
-                    other{"há {0} dias"}
+                    one{"-{0} dia"}
+                    other{"-{0} dias"}
                 }
             }
         }
         day-short{
             relative{
-                "-2"{"anteontem"}
+                "-1"{"ontem"}
                 "0"{"hoje"}
-                "2"{"depois de amanhã"}
+                "1"{"amanhã"}
             }
             relativeTime{
                 future{
@@ -896,10 +931,6 @@ pt_PT{
                     one{"dentro de {0} trim."}
                     other{"dentro de {0} trim."}
                 }
-                past{
-                    one{"há {0} trim."}
-                    other{"há {0} trim."}
-                }
             }
         }
         sat{
@@ -1074,10 +1105,6 @@ pt_PT{
                     one{"dentro de {0} quarta-feira"}
                     other{"dentro de {0} quartas-feiras"}
                 }
-                past{
-                    one{"há {0} quarta-feira"}
-                    other{"há {0} quartas-feiras"}
-                }
             }
         }
         wed-narrow{
@@ -1134,12 +1161,6 @@ pt_PT{
                 }
             }
         }
-        weekday-narrow{
-            dn{"dia da semana"}
-        }
-        weekday-short{
-            dn{"dia da semana"}
-        }
         year{
             relativeTime{
                 future{
@@ -1185,6 +1206,8 @@ pt_PT{
             start{"{0}, {1}"}
         }
         unit-narrow{
+            2{"{0} e {1}"}
+            end{"{0} e {1}"}
             middle{"{0}, {1}"}
             start{"{0}, {1}"}
         }

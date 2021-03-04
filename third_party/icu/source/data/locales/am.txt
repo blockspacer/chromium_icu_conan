@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 am{
     Ellipsis{
         final{"{0}…"}
@@ -23,7 +24,7 @@ am{
         "[ሀ ለ ሐ መ ሠ ረ ሰ ሸ ቀ ቈ በ ቨ ተ ቸ ኀ ኈ ነ ኘ አ ከ ኰ ኸ ወ ዐ ዘ ዠ የ ደ ጀ ገ ጐ ጠ ጨ ጰ ጸ ፀ ፈ ፐ"
         "]"
     }
-    ExemplarCharactersNumbers{"[\\- , . % ‰ + 0 1 2 3 4 5 6 7 8 9]"}
+    ExemplarCharactersNumbers{"[\\- ‑ , . % ‰ + 0 1 2 3 4 5 6 7 8 9]"}
     ExemplarCharactersPunctuation{"[‐ – , ፡ ፣ ፤ ፥ ፦ ! ? . ። ‹ › « » ( ) \\[ \\]]"}
     MoreInformation{"?"}
     NumberElements{
@@ -37,6 +38,7 @@ am{
             patterns{
                 accountingFormat{"¤#,##0.00;(¤#,##0.00)"}
                 currencyFormat{"¤#,##0.00"}
+                decimalFormat{"#,##0.###"}
                 percentFormat{"#,##0%"}
                 scientificFormat{"#E0"}
             }
@@ -107,16 +109,16 @@ am{
                         other{"¤000 ሺ"}
                     }
                     1000000{
-                        one{"¤0 ሜትር"}
-                        other{"¤0 ሜትር"}
+                        one{"¤0 ሚ"}
+                        other{"¤0 ሚ"}
                     }
                     10000000{
-                        one{"¤00 ሜትር"}
-                        other{"¤00 ሜትር"}
+                        one{"¤00 ሚ"}
+                        other{"¤00 ሚ"}
                     }
                     100000000{
-                        one{"¤000 ሜትር"}
-                        other{"¤000 ሜትር"}
+                        one{"¤000 ሚ"}
+                        other{"¤000 ሚ"}
                     }
                     1000000000{
                         one{"¤0 ቢ"}
@@ -157,16 +159,16 @@ am{
                         other{"000 ሺ"}
                     }
                     1000000{
-                        one{"0 ሜትር"}
-                        other{"0 ሜትር"}
+                        one{"0 ሚ"}
+                        other{"0 ሚ"}
                     }
                     10000000{
-                        one{"00 ሜትር"}
-                        other{"00 ሜትር"}
+                        one{"00 ሚ"}
+                        other{"00 ሚ"}
                     }
                     100000000{
-                        one{"000ሜ"}
-                        other{"000ሜ"}
+                        one{"000 ሚ"}
+                        other{"000 ሚ"}
                     }
                     1000000000{
                         one{"0 ቢ"}
@@ -195,13 +197,18 @@ am{
                 }
             }
             symbols{
+                decimal{"."}
                 exponential{"E"}
+                group{","}
                 infinity{"∞"}
                 list{";"}
+                minusSign{"-"}
                 nan{"NaN"}
                 perMille{"‰"}
                 percentSign{"%"}
+                plusSign{"+"}
                 superscriptingExponent{"×"}
+                timeSeparator{":"}
             }
         }
         minimalPairs{
@@ -216,7 +223,6 @@ am{
         minimumGroupingDigits{"1"}
         traditional{"ethi"}
     }
-    Version{"2.1.49.82"}
     calendar{
         buddhist{
             DateTimePatterns{
@@ -718,15 +724,6 @@ am{
                 yyyyQQQQ{"G y QQQQ"}
             }
             intervalFormats{
-                Bh{
-                    B{"h B – h B"}
-                    h{"h–h B"}
-                }
-                Bhm{
-                    B{"h:mm B – h:mm B"}
-                    h{"h:mm–h:mm B"}
-                    m{"h:mm–h:mm B"}
-                }
                 H{
                     H{"HH–HH"}
                 }
@@ -879,6 +876,10 @@ am{
                 MMM{"LLL"}
                 MMMEd{"E፣ MMM d"}
                 MMMMEd{"E፣ MMMM d"}
+                MMMMW{
+                    one{"ሳምንት W የ MMMM"}
+                    other{"ሳምንት W የ MMMM"}
+                }
                 MMMMd{"MMMM d"}
                 MMMd{"MMM d"}
                 Md{"M/d"}
@@ -899,6 +900,10 @@ am{
                 yMd{"d/M/y"}
                 yQQQ{"QQQ y"}
                 yQQQQ{"QQQQ y"}
+                yw{
+                    one{"'week' w 'of' Y"}
+                    other{"'week' w 'of' Y"}
+                }
             }
             dayNames{
                 format{
@@ -1043,6 +1048,10 @@ am{
                     "ዓ/ዓ",
                     "ዓ/ም",
                 }
+                abbreviated%variant{
+                    "ዓ/ዓ",
+                    "CE",
+                }
                 narrow{
                     "ዓ/ዓ",
                     "ዓ/ም",
@@ -1057,15 +1066,6 @@ am{
                 }
             }
             intervalFormats{
-                Bh{
-                    B{"h B – h B"}
-                    h{"h–h B"}
-                }
-                Bhm{
-                    B{"h:mm B – h:mm B"}
-                    h{"h:mm–h:mm B"}
-                    m{"h:mm–h:mm B"}
-                }
                 Gy{
                     G{"G y – G y"}
                     y{"G y–y"}
@@ -2262,9 +2262,12 @@ am{
     listPattern{
         or{
             2{"{0} ወይም {1}﻿"}
-            end{"{0} ወይም {1}﻿"}
+            end{"{0}፣ ወይም {1}"}
             middle{"{0}፣ {1}"}
             start{"{0}፣ {1}"}
+        }
+        or-narrow{
+            end{"{0}፣ ወይም {1}"}
         }
         standard{
             2{"{0} እና {1}"}
@@ -2273,7 +2276,6 @@ am{
             start{"{0}፣ {1}"}
         }
         standard-narrow{
-            middle{"{0}፣ {1}"}
             start{"{0}, {1}"}
         }
         standard-short{

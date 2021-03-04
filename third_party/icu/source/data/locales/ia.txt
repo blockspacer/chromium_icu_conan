@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 ia{
     Ellipsis{
         final{"{0}…"}
@@ -12,7 +13,6 @@ ia{
     ExemplarCharacters{"[a b c {ch} d e f g h i j k l m n o p {ph} q r s t u v w x y z]"}
     MoreInformation{"?"}
     NumberElements{
-        default{"latn"}
         latn{
             miscPatterns{
                 atLeast{"⩾{0}"}
@@ -193,9 +193,7 @@ ia{
             }
         }
         minimumGroupingDigits{"2"}
-        native{"latn"}
     }
-    Version{"2.1.48.36"}
     calendar{
         generic{
             DateTimePatterns{

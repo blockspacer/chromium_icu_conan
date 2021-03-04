@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 wo{
     Countries{
         AD{"Andoor"}
@@ -42,7 +43,7 @@ wo{
         CC{"Duni Koko (Kilin)"}
         CF{"Repiblik Sàntar Afrik"}
         CH{"Siwis"}
-        CI{"Kodiwaar (Côte d’Ivoire)"}
+        CI{"Kodiwaar"}
         CK{"Duni Kuuk"}
         CL{"Sili"}
         CM{"Kamerun"}
@@ -254,5 +255,4 @@ wo{
         CD{"Kongo (R K D)"}
         CG{"Réewum Kongo"}
     }
-    Version{"2.1.49.82"}
 }

@@ -454,13 +454,15 @@ endif(DISABLE_FORMATTING)
       UCHAR_TYPE=wchar_t
     )
   elseif(TARGET_EMSCRIPTEN)
-    list(APPEND ICU_PUBLIC_DEFINES
-      UCHAR_TYPE=uint16_t
-    )
+    # keep default value i.e. char16_t
+    #list(APPEND ICU_PUBLIC_DEFINES
+    #  UCHAR_TYPE=uint16_t
+    #)
   else()
-    list(APPEND ICU_PUBLIC_DEFINES
-      UCHAR_TYPE=uint16_t
-    )
+    # keep default value i.e. char16_t
+    #list(APPEND ICU_PUBLIC_DEFINES
+    #  UCHAR_TYPE=uint16_t
+    #)
   endif()
 
   # see https://github.com/webrtc-uwp/chromium-build/blob/master/linux/unbundle/icu.gn#L37

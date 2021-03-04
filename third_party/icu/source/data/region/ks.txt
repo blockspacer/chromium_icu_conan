@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 ks{
     Countries{
         001{"دُنیا"}
@@ -171,7 +172,6 @@ ks{
         MF{"سینٹ مارٹِن"}
         MG{"میڑاگاسکار"}
         MH{"مارشَل جٔزیٖرٕ"}
-        MK{"مؠسوڑونِیا"}
         ML{"مالی"}
         MM{"مَیَنما بٔرما"}
         MN{"مَنگولِیا"}
@@ -278,5 +278,4 @@ ks{
         ZW{"زِمبابے"}
         ZZ{"نامعلوٗم تہٕ نالَگہار عَلاقہٕ"}
     }
-    Version{"2.1.47.83"}
 }

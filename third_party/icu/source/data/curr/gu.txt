@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 gu{
     Currencies{
         AED{
@@ -52,7 +53,7 @@ gu{
         }
         BDT{
             "BDT",
-            "બાંગલાદેશી ટાકા",
+            "બાંગ્લાદેશી ટાકા",
         }
         BGN{
             "BGN",
@@ -672,6 +673,7 @@ gu{
         BRL{"R$"}
         BSD{"$"}
         BWP{"P"}
+        BYN{"р."}
         BZD{"$"}
         CAD{"$"}
         CLP{"$"}
@@ -711,6 +713,7 @@ gu{
         KZT{"₸"}
         LAK{"₭"}
         LBP{"L£"}
+        LKR{"Rs"}
         LRD{"$"}
         MGA{"Ar"}
         MMK{"K"}
@@ -722,8 +725,10 @@ gu{
         NGN{"₦"}
         NIO{"C$"}
         NOK{"kr"}
+        NPR{"Rs"}
         NZD{"$"}
         PHP{"₱"}
+        PKR{"Rs"}
         PLN{"zł"}
         PYG{"₲"}
         RUB{"₽"}
@@ -734,6 +739,7 @@ gu{
         SHP{"£"}
         SRD{"$"}
         SSP{"£"}
+        STN{"Db"}
         SYP{"£"}
         THB{"฿"}
         TOP{"T$"}
@@ -803,7 +809,7 @@ gu{
             other{"બાર્બાડિયન ડોલર"}
         }
         BDT{
-            one{"બાંગલાદેશી ટાકા"}
+            one{"બાંગ્લાદેશી ટાકા"}
             other{"બાંગલાદેશી ટાકા"}
         }
         BGN{
@@ -1407,5 +1413,4 @@ gu{
         one{"{0} {1}"}
         other{"{0} {1}"}
     }
-    Version{"2.1.48.42"}
 }

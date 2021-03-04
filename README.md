@@ -54,7 +54,7 @@ TODO
 - modify languages in filters.json, see below.
 - add font file with support of your language
 
-## How to make icu data files smaller (ICU 64-2)
+## How to make icu data files smaller (ICU 68-2)
 
 modify languages in filters.json (see ICU_DATA_FILTER_FILE below), more languages = bigger bundle size
 
@@ -66,20 +66,23 @@ See examples:
 verify filters.json using jsonschemavalidator.net and (remove comments) https://github.com/unicode-org/icu/blob/release-64-2/icu4c/source/data/buildtool/filtration_schema.json
 
 ```bash
-git clone -brelease-64-2 https://github.com/unicode-org/icu.git icu64
+git clone -brelease-68-2 https://github.com/unicode-org/icu.git icu64
 cd icu64/icu4c
 PROJ_ROOT=${PWD}
 ls -artl ${PROJ_ROOT}
 pip3 install --index-url=https://pypi.python.org/simple/ --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org wheel \
   --user hjson jsonschema
-ICUROOT=${PROJ_ROOT}/third_party/icu
+ICUROOT=${PROJ_ROOT}/
 ls -artl ${ICUROOT}
 cd ${ICUROOT}
-chmod +x "${ICUROOT}/third_party/icu/source/configure"
+file ${ICUROOT}/source/configure
+chmod +x "${ICUROOT}/source/configure"
+file "${ICUROOT}/source/runConfigureICU"
 chmod +x "${ICUROOT}/source/runConfigureICU"
 # must exist, copy some json file from `filters` folder
-ICU_FILTERS_JSON=........
+ICU_FILTERS_JSON=/home/$USER/chromium_icu_conan/filters/optimal.json
 file "${ICU_FILTERS_JSON}"
+rm -rf build
 mkdir build
 cd build
 ICU_DATA_FILTER_FILE="${ICU_FILTERS_JSON}" \
@@ -91,9 +94,6 @@ make clean
 rm -rf build
 make -j8
 ls data/out
-rm ${PROJ_ROOT}/resources/icu/icudtl.dat
-cp ${ICUROOT}/build/data/out/icudt64l.dat ${PROJ_ROOT}/resources/icu/icudtl.dat
-ls ${PROJ_ROOT}/resources/icu
 ```
 
 see:
@@ -105,7 +105,7 @@ see:
  - http://userguide.icu-project.org/howtouseicu#TOC-C-With-Your-Own-Build-System
  - http://userguide.icu-project.org/icudata
  - http://cldr.unicode.org/development/development-process/design-proposals/specifying-text-break-variants-in-locale-ids
- - https://github.com/unicode-org/icu/tree/release-64-2
+ - https://github.com/unicode-org/icu/tree/release-68-2
  - https://github.com/blockspacer/cobalt-clone-28052019/blob/89664d116629734759176d820e9923257717e09c/src/third_party/icu/README.chromium#L26
  - https://github.com/blockspacer/cobalt-clone-28052019/blob/89664d116629734759176d820e9923257717e09c/src/third_party/icu/scripts/accept_lang.list
  - http://userguide.icu-project.org/icufaq#TOC-How-can-I-reduce-the-size-of-the-ICU-data-library-

@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 sd{
     Currencies{
         AED{
@@ -643,6 +644,105 @@ sd{
             "زمبائي ڪواچا",
         }
     }
+    Currencies%narrow{
+        AOA{"Kz"}
+        ARS{"$"}
+        AUD{"$"}
+        BAM{"KM"}
+        BBD{"$"}
+        BDT{"৳"}
+        BMD{"$"}
+        BND{"$"}
+        BOB{"Bs"}
+        BRL{"R$"}
+        BSD{"$"}
+        BWP{"P"}
+        BYN{"р."}
+        BZD{"$"}
+        CAD{"$"}
+        CLP{"$"}
+        CNY{"¥"}
+        COP{"$"}
+        CRC{"₡"}
+        CUC{"$"}
+        CUP{"$"}
+        CZK{"Kč"}
+        DKK{"kr"}
+        DOP{"$"}
+        EGP{"E£"}
+        EUR{"€"}
+        FJD{"$"}
+        FKP{"£"}
+        GBP{"£"}
+        GEL{"₾"}
+        GIP{"£"}
+        GNF{"FG"}
+        GTQ{"Q"}
+        GYD{"$"}
+        HKD{"$"}
+        HNL{"L"}
+        HRK{"kn"}
+        HUF{"Ft"}
+        IDR{"Rp"}
+        ILS{"₪"}
+        INR{"₹"}
+        ISK{"kr"}
+        JMD{"$"}
+        JPY{"¥"}
+        KHR{"៛"}
+        KMF{"CF"}
+        KPW{"₩"}
+        KRW{"₩"}
+        KYD{"$"}
+        KZT{"₸"}
+        LAK{"₭"}
+        LBP{"L£"}
+        LKR{"Rs"}
+        LRD{"$"}
+        MGA{"Ar"}
+        MMK{"K"}
+        MNT{"₮"}
+        MUR{"Rs"}
+        MXN{"$"}
+        MYR{"RM"}
+        NAD{"$"}
+        NGN{"₦"}
+        NIO{"C$"}
+        NOK{"kr"}
+        NPR{"Rs"}
+        NZD{"$"}
+        PHP{"₱"}
+        PKR{"Rs"}
+        PLN{"zł"}
+        PYG{"₲"}
+        RON{"lei"}
+        RUB{"₽"}
+        RWF{"RF"}
+        SBD{"$"}
+        SEK{"kr"}
+        SGD{"$"}
+        SHP{"£"}
+        SRD{"$"}
+        SSP{"£"}
+        STN{"Db"}
+        SYP{"£"}
+        THB{"฿"}
+        TOP{"T$"}
+        TRY{"₺"}
+        TTD{"$"}
+        TWD{"$"}
+        UAH{"₴"}
+        USD{"$"}
+        UYU{"$"}
+        VEF{"Bs"}
+        VND{"₫"}
+        XCD{"$"}
+        ZAR{"R"}
+        ZMW{"ZK"}
+    }
+    Currencies%variant{
+        TRY{"TL"}
+    }
     CurrencyPlurals{
         AED{
             one{"گڏيل عرب امارات درهم"}
@@ -733,16 +833,12 @@ sd{
             other{"ڀوٽاني گلٽرم"}
         }
         BWP{
-            one{"بوستواني پولا"}
+            one{"بوٽسواني پولا"}
             other{"بوستواني پولا"}
         }
         BYN{
             one{"بیلاروسی ربل"}
             other{"بیلاروسی ربل"}
-        }
-        BYR{
-            one{"BYR"}
-            other{"BYR"}
         }
         BZD{
             one{"بيليز ڊالر"}
@@ -801,7 +897,7 @@ sd{
             other{"جبوتي فرينڪ"}
         }
         DKK{
-            one{"دانش ڪرون"}
+            one{"ڊينش ڪرون"}
             other{"دانش ڪرون"}
         }
         DOP{
@@ -890,7 +986,7 @@ sd{
         }
         IDR{
             one{"انڊونيشيائي رپيه"}
-            other{"انڊونيشيائي رپيه"}
+            other{"انڊونيشيائي رپيو"}
         }
         ILS{
             one{"اسرائيلي نيو شيڪل"}
@@ -925,7 +1021,7 @@ sd{
             other{"جاپاني يين"}
         }
         KES{
-            one{"ڪينيائي سلنگ"}
+            one{"ڪينيائي شلنگ"}
             other{"ڪينيائي سلنگ"}
         }
         KGS{
@@ -1041,11 +1137,11 @@ sd{
             other{"موزمبيق ميٽيڪل"}
         }
         NAD{
-            one{"نميبائي ڊالر"}
+            one{"نميبيائي ڊالر"}
             other{"نميبائي ڊالر"}
         }
         NGN{
-            one{"نائجريائي نائرا"}
+            one{"نائجيريائي نائرا"}
             other{"نائجريائي نائرا"}
         }
         NIO{
@@ -1169,7 +1265,7 @@ sd{
             other{"سائو ٽوم ۽ پرنسپي دوبرا"}
         }
         SYP{
-            one{"سيريائي پائونڊ"}
+            one{"شامي پائونڊ"}
             other{"سيريائي پائونڊ"}
         }
         SZL{
@@ -1185,7 +1281,7 @@ sd{
             other{"تاجڪستاني سوموني"}
         }
         TMT{
-            one{"ترڪمانستان منت"}
+            one{"ترڪمانستاني منت"}
             other{"ترڪمانستان منت"}
         }
         TND{
@@ -1285,5 +1381,4 @@ sd{
             other{"زمبائي ڪواچا"}
         }
     }
-    Version{"2.1.49.82"}
 }

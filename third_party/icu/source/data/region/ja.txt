@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 ja{
     Countries{
         001{"世界"}
@@ -287,6 +288,8 @@ ja{
         VU{"バヌアツ"}
         WF{"ウォリス・フツナ"}
         WS{"サモア"}
+        XA{"疑似アクセント"}
+        XB{"疑似 BIDI"}
         XK{"コソボ"}
         YE{"イエメン"}
         YT{"マヨット"}
@@ -312,5 +315,4 @@ ja{
         SZ{"スワジランド"}
         TL{"東チモール"}
     }
-    Version{"2.1.49.82"}
 }

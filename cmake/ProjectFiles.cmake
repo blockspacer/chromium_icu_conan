@@ -67,9 +67,9 @@ list(APPEND ICU_SOURCES
   ${ICU_FULL_DIR}source/i18n/double-conversion-bignum.cpp
   ${ICU_FULL_DIR}source/i18n/double-conversion-bignum-dtoa.cpp
   ${ICU_FULL_DIR}source/i18n/double-conversion-cached-powers.cpp
-  ${ICU_FULL_DIR}source/i18n/double-conversion.cpp
-  ${ICU_FULL_DIR}source/i18n/double-conversion-diy-fp.cpp
+  ${ICU_FULL_DIR}source/i18n/double-conversion-double-to-string.cpp
   ${ICU_FULL_DIR}source/i18n/double-conversion-fast-dtoa.cpp
+  ${ICU_FULL_DIR}source/i18n/double-conversion-string-to-double.cpp
   ${ICU_FULL_DIR}source/i18n/double-conversion-strtod.cpp
   ${ICU_FULL_DIR}source/i18n/dtfmtsym.cpp
   ${ICU_FULL_DIR}source/i18n/dtitvfmt.cpp
@@ -82,6 +82,7 @@ list(APPEND ICU_SOURCES
   ${ICU_FULL_DIR}source/i18n/fmtable_cnv.cpp
   ${ICU_FULL_DIR}source/i18n/fmtable.cpp
   ${ICU_FULL_DIR}source/i18n/format.cpp
+  ${ICU_FULL_DIR}source/i18n/formatted_string_builder.cpp
   ${ICU_FULL_DIR}source/i18n/formattedval_iterimpl.cpp
   ${ICU_FULL_DIR}source/i18n/formattedval_sbimpl.cpp
   ${ICU_FULL_DIR}source/i18n/formattedvalue.cpp
@@ -99,6 +100,7 @@ list(APPEND ICU_SOURCES
   ${ICU_FULL_DIR}source/i18n/listformatter.cpp
   ${ICU_FULL_DIR}source/i18n/measfmt.cpp
   ${ICU_FULL_DIR}source/i18n/measunit.cpp
+  ${ICU_FULL_DIR}source/i18n/measunit_extra.cpp
   ${ICU_FULL_DIR}source/i18n/measure.cpp
   ${ICU_FULL_DIR}source/i18n/msgfmt.cpp
   ${ICU_FULL_DIR}source/i18n/name2uni.cpp
@@ -106,7 +108,6 @@ list(APPEND ICU_SOURCES
   ${ICU_FULL_DIR}source/i18n/nfrule.cpp
   ${ICU_FULL_DIR}source/i18n/nfsubs.cpp
   ${ICU_FULL_DIR}source/i18n/nortrans.cpp
-  ${ICU_FULL_DIR}source/i18n/nounit.cpp
   ${ICU_FULL_DIR}source/i18n/nultrans.cpp
   ${ICU_FULL_DIR}source/i18n/number_affixutils.cpp
   ${ICU_FULL_DIR}source/i18n/number_asformat.cpp
@@ -131,7 +132,8 @@ list(APPEND ICU_SOURCES
   ${ICU_FULL_DIR}source/i18n/number_rounding.cpp
   ${ICU_FULL_DIR}source/i18n/number_scientific.cpp
   ${ICU_FULL_DIR}source/i18n/number_skeletons.cpp
-  ${ICU_FULL_DIR}source/i18n/number_stringbuilder.cpp
+  ${ICU_FULL_DIR}source/i18n/number_symbolswrapper.cpp
+  ${ICU_FULL_DIR}source/i18n/number_usageprefs.cpp
   ${ICU_FULL_DIR}source/i18n/number_utils.cpp
   ${ICU_FULL_DIR}source/i18n/numfmt.cpp
   ${ICU_FULL_DIR}source/i18n/numparse_affixes.cpp
@@ -141,14 +143,15 @@ list(APPEND ICU_SOURCES
   ${ICU_FULL_DIR}source/i18n/numparse_impl.cpp
   ${ICU_FULL_DIR}source/i18n/numparse_parsednumber.cpp
   ${ICU_FULL_DIR}source/i18n/numparse_scientific.cpp
-  ${ICU_FULL_DIR}source/i18n/numparse_stringsegment.cpp
   ${ICU_FULL_DIR}source/i18n/numparse_symbols.cpp
   ${ICU_FULL_DIR}source/i18n/numparse_validators.cpp
+  ${ICU_FULL_DIR}source/i18n/numrange_capi.cpp
   ${ICU_FULL_DIR}source/i18n/numrange_fluent.cpp
   ${ICU_FULL_DIR}source/i18n/numrange_impl.cpp
   ${ICU_FULL_DIR}source/i18n/numsys.cpp
   ${ICU_FULL_DIR}source/i18n/olsontz.cpp
   ${ICU_FULL_DIR}source/i18n/persncal.cpp
+  ${ICU_FULL_DIR}source/i18n/pluralranges.cpp
   ${ICU_FULL_DIR}source/i18n/plurfmt.cpp
   ${ICU_FULL_DIR}source/i18n/plurrule.cpp
   ${ICU_FULL_DIR}source/i18n/quant.cpp
@@ -181,6 +184,7 @@ list(APPEND ICU_SOURCES
   ${ICU_FULL_DIR}source/i18n/smpdtfst.cpp
   ${ICU_FULL_DIR}source/i18n/sortkey.cpp
   ${ICU_FULL_DIR}source/i18n/standardplural.cpp
+  ${ICU_FULL_DIR}source/i18n/string_segment.cpp
   ${ICU_FULL_DIR}source/i18n/strmatch.cpp
   ${ICU_FULL_DIR}source/i18n/strrepl.cpp
   ${ICU_FULL_DIR}source/i18n/stsearch.cpp
@@ -218,6 +222,10 @@ list(APPEND ICU_SOURCES
   ${ICU_FULL_DIR}source/i18n/umsg.cpp
   ${ICU_FULL_DIR}source/i18n/unesctrn.cpp
   ${ICU_FULL_DIR}source/i18n/uni2name.cpp
+  ${ICU_FULL_DIR}source/i18n/units_complexconverter.cpp
+  ${ICU_FULL_DIR}source/i18n/units_converter.cpp
+  ${ICU_FULL_DIR}source/i18n/units_data.cpp
+  ${ICU_FULL_DIR}source/i18n/units_router.cpp
   ${ICU_FULL_DIR}source/i18n/unum.cpp
   ${ICU_FULL_DIR}source/i18n/unumsys.cpp
   ${ICU_FULL_DIR}source/i18n/upluralrules.cpp
@@ -271,15 +279,20 @@ list(APPEND ICU_SOURCES
   ${ICU_FULL_DIR}source/common/icuplug.cpp
   ${ICU_FULL_DIR}source/common/loadednormalizer2impl.cpp
   ${ICU_FULL_DIR}source/common/localebuilder.cpp
+  ${ICU_FULL_DIR}source/common/localematcher.cpp
+  ${ICU_FULL_DIR}source/common/localeprioritylist.cpp
   ${ICU_FULL_DIR}source/common/locavailable.cpp
   ${ICU_FULL_DIR}source/common/locbased.cpp
   ${ICU_FULL_DIR}source/common/locdispnames.cpp
+  ${ICU_FULL_DIR}source/common/locdistance.cpp
   ${ICU_FULL_DIR}source/common/locdspnm.cpp
   ${ICU_FULL_DIR}source/common/locid.cpp
   ${ICU_FULL_DIR}source/common/loclikely.cpp
+  ${ICU_FULL_DIR}source/common/loclikelysubtags.cpp
   ${ICU_FULL_DIR}source/common/locmap.cpp
   ${ICU_FULL_DIR}source/common/locresdata.cpp
   ${ICU_FULL_DIR}source/common/locutil.cpp
+  ${ICU_FULL_DIR}source/common/lsr.cpp
   ${ICU_FULL_DIR}source/common/messagepattern.cpp
   ${ICU_FULL_DIR}source/common/normalizer2.cpp
   ${ICU_FULL_DIR}source/common/normalizer2impl.cpp
@@ -303,6 +316,7 @@ list(APPEND ICU_SOURCES
   ${ICU_FULL_DIR}source/common/resbund_cnv.cpp
   ${ICU_FULL_DIR}source/common/resbund.cpp
   ${ICU_FULL_DIR}source/common/resource.cpp
+  ${ICU_FULL_DIR}source/common/restrace.cpp
   ${ICU_FULL_DIR}source/common/ruleiter.cpp
   ${ICU_FULL_DIR}source/common/schriter.cpp
   ${ICU_FULL_DIR}source/common/serv.cpp

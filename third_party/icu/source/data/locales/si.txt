@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 si{
     AuxExemplarCharacters{"[\u200B\u200C\u200D ඎ ඏ ඐ ඦ ෳ]"}
     Ellipsis{
@@ -19,13 +20,14 @@ si{
         "[අ ආ ඇ ඈ ඉ ඊ උ ඌ ඍ එ ඒ ඓ ඔ ඕ ඖ ක ඛ ග ඝ ඞ ඟ ච ඡ ජ ඣ ඥ ඤ ට ඨ ඩ ඪ ණ ඬ ත ථ ද ධ න"
         " ඳ ප ඵ බ භ ම ඹ ය ර ල ව ශ ෂ ස හ ළ ෆ]"
     }
-    ExemplarCharactersNumbers{"[\\- , . % ‰ + 0 1 2 3 4 5 6 7 8 9]"}
+    ExemplarCharactersNumbers{"[\\- ‑ , . % ‰ + 0 1 2 3 4 5 6 7 8 9]"}
     ExemplarCharactersPunctuation{
-        "[\\- ‐ – — , ; \\: ! ? . … ' ‘ ’ \u0022 “ ” ( ) \\[ \\] § @ * / \\& # † ‡ ′ "
-        "″]"
+        "[\\- ‐ ‑ – — , ; \\: ! ? . … ' ‘ ’ \u0022 “ ” ( ) \\[ \\] § @ * / \\& # † ‡ "
+        "′ ″]"
     }
     MoreInformation{"?"}
     NumberElements{
+        default{"latn"}
         latn{
             miscPatterns{
                 approximately{"~{0}"}
@@ -36,6 +38,7 @@ si{
             patterns{
                 accountingFormat{"¤#,##0.00;(¤#,##0.00)"}
                 currencyFormat{"¤#,##0.00"}
+                decimalFormat{"#,##0.###"}
                 percentFormat{"#,##0%"}
                 scientificFormat{"#"}
             }
@@ -194,11 +197,16 @@ si{
                 }
             }
             symbols{
+                approximatelySign{"~"}
+                decimal{"."}
                 exponential{"E"}
+                group{","}
                 infinity{"∞"}
+                minusSign{"-"}
                 nan{"NaN"}
                 perMille{"‰"}
                 percentSign{"%"}
+                plusSign{"+"}
                 superscriptingExponent{"×"}
                 timeSeparator{"."}
             }
@@ -212,8 +220,9 @@ si{
                 other{"පොත් {0}ක් ඇත. ඒවා කියවීමි."}
             }
         }
+        minimumGroupingDigits{"1"}
+        native{"latn"}
     }
-    Version{"2.1.48.17"}
     calendar{
         generic{
             DateTimePatterns{
@@ -951,7 +960,7 @@ si{
         african_scripts{"අප්රිකානු සිද්ධි මාලා"}
         american_scripts{"ඇමරිකානු සිද්ධි මාලා"}
         animal{"සතා"}
-        animals_nature{"සත්වයින් සහ ස්වභාවදර්මය"}
+        animals_nature{"සත්වයින් හෝ ස්වභාවදර්මය"}
         arrows{"ඊතල"}
         body{"ශරීරය"}
         box_drawing{"පෙට්ටි ඇදීම"}
@@ -1866,12 +1875,6 @@ si{
             middle{"{0}, {1}"}
             start{"{0}, {1}"}
         }
-        standard-narrow{
-            2{"{0} සහ {1}"}
-            end{"{0}, සහ {1}"}
-            middle{"{0}, {1}"}
-            start{"{0}, {1}"}
-        }
         standard-short{
             2{"{0} සහ {1}"}
             end{"{0}, සහ {1}"}
@@ -1906,7 +1909,7 @@ si{
         date{
             lenient{
                 "[\\--/]",
-                "[\\:∶]",
+                "[\\:∶︓﹕：]",
             }
         }
         general{
@@ -1915,8 +1918,8 @@ si{
                 "['ʼ՚᾽᾿’＇]",
                 "[%٪﹪％]",
                 "[؉‰]",
-                "[\$﹩＄$]",
-                "[£₤]",
+                "[\$﹩＄]",
+                "[£₤￡]",
                 "[¥￥]",
                 "[₩￦]",
                 "[₨₹{Rp}{Rs}]",
@@ -1924,7 +1927,7 @@ si{
         }
         number{
             lenient{
-                "[\\-‒⁻₋−➖﹣－]",
+                "[\\-‐‒–⁻₋−➖﹣－]",
                 "[,،٫、︐︑﹐﹑，､]",
                 "[+⁺₊➕﬩﹢＋]",
             }

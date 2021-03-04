@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 da{
     Countries{
         001{"Verden"}
@@ -145,7 +146,7 @@ da{
         IL{"Israel"}
         IM{"Isle of Man"}
         IN{"Indien"}
-        IO{"Det britiske territorium i Det Indiske Ocean"}
+        IO{"Det Britiske Territorium i Det Indiske Ocean"}
         IQ{"Irak"}
         IR{"Iran"}
         IS{"Island"}
@@ -257,7 +258,7 @@ da{
         TA{"Tristan da Cunha"}
         TC{"Turks- og Caicosøerne"}
         TD{"Tchad"}
-        TF{"De Franske Besiddelser i Det Sydlige Indiske Ocean"}
+        TF{"De Franske Besiddelser i Det Sydlige Indiske Ocean og Antarktis"}
         TG{"Togo"}
         TH{"Thailand"}
         TJ{"Tadsjikistan"}
@@ -287,6 +288,8 @@ da{
         VU{"Vanuatu"}
         WF{"Wallis og Futuna"}
         WS{"Samoa"}
+        XA{"pseudo-accenter"}
+        XB{"pseudo-bidi"}
         XK{"Kosovo"}
         YE{"Yemen"}
         YT{"Mayotte"}
@@ -296,12 +299,10 @@ da{
         ZZ{"Ukendt område"}
     }
     Countries%short{
-        GB{"UK"}
         HK{"Hongkong"}
         MO{"Macao"}
         PS{"Palæstina"}
         UN{"FN"}
-        US{"USA"}
     }
     Countries%variant{
         CD{"Den Demokratiske Republik Congo (DRC)"}
@@ -311,5 +312,4 @@ da{
         SZ{"Swaziland"}
         TL{"Østtimor"}
     }
-    Version{"2.1.49.82"}
 }

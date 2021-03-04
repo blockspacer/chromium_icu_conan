@@ -1,9 +1,11 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 ur{
     AuxExemplarCharacters{
         "[؀؁؂؃\u200C\u200D\u200E\u200F \u064B \u064C \u064D \u064E \u064F \u0650 "
-        "\u0651 \u0652 \u0654 \u0656 \u0657 \u0658 \u0670 ۃ ٻ ٺ ټ ٽ ي]"
+        "\u0651 \u0652 \u0654 \u0656 \u0657 \u0658 \u0670 أ آ ں ؤ ۂ ۃ ئ ٻ ة ٺ ټ ٽ ه ي"
+        "]"
     }
     Ellipsis{
         final{"{0}…"}
@@ -14,41 +16,51 @@ ur{
         word-medial{"{0} … {1}"}
     }
     ExemplarCharacters{
-        "[ا أ آ ب پ ت ٹ ث ج چ ح خ د ڈ ذ ر ڑ ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن ں و ؤ ہ"
-        " ۂ ھ ء ی ئ ے ة ه]"
+        "[ا ب پ ت ٹ ث ج چ ح خ د ڈ ذ ر ڑ ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ہ ھ ء ی ے"
+        "]"
     }
     ExemplarCharactersIndex{
         "[ا ب پ ت ٹ ث ج چ ح خ د ڈ ذ ر ڑ ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ہ ھ ء ی ے"
         "]"
     }
-    ExemplarCharactersNumbers{"[\u200E \\- , ٫ ٬ . % ‰ + 0۰ 1۱ 2۲ 3۳ 4۴ 5۵ 6۶ 7۷ 8۸ 9۹]"}
+    ExemplarCharactersNumbers{"[\u200E \\- ‑ , ٫ ٬ . % ‰ + 0۰ 1۱ 2۲ 3۳ 4۴ 5۵ 6۶ 7۷ 8۸ 9۹]"}
     ExemplarCharactersPunctuation{"[، ؍ ٫ ٬ ؛ \\: ؟ . ۔ ( ) \\[ \\]]"}
     MoreInformation{"؟"}
     NumberElements{
         arabext{
             patterns{
                 currencyFormat{"¤#,##0.00"}
+                decimalFormat{"#,##0.###"}
                 percentFormat{"#,##0%"}
                 scientificFormat{"#E0"}
             }
             symbols{
+                approximatelySign{"~"}
+                decimal{"٫"}
                 exponential{"×۱۰^"}
+                group{"٬"}
                 infinity{"∞"}
                 list{";"}
+                minusSign{"‎-‎"}
                 nan{"NaN"}
                 perMille{"‰"}
                 percentSign{"%"}
+                plusSign{"‎+‎"}
                 superscriptingExponent{"×"}
             }
         }
+        default{"latn"}
         latn{
             miscPatterns{
+                approximately{"~{0}"}
                 atLeast{"≥{0}"}
+                atMost{"≤{0}"}
                 range{"{0}–{1}"}
             }
             patterns{
                 accountingFormat{"¤#,##0.00;(¤#,##0.00)"}
                 currencyFormat{"¤ #,##0.00"}
+                decimalFormat{"#,##0.###"}
                 percentFormat{"#,##0%"}
                 scientificFormat{"#E0"}
             }
@@ -207,8 +219,12 @@ ur{
                 }
             }
             symbols{
+                approximatelySign{"~"}
+                decimal{"."}
                 exponential{"E"}
+                group{","}
                 infinity{"∞"}
+                list{";"}
                 minusSign{"‎-"}
                 nan{"NaN"}
                 perMille{"‰"}
@@ -230,8 +246,20 @@ ur{
         minimumGroupingDigits{"1"}
         native{"arabext"}
     }
-    Version{"2.1.49.82"}
     calendar{
+        buddhist{
+            eras{
+                abbreviated{
+                    "BE",
+                }
+                narrow{
+                    "BE",
+                }
+                wide{
+                    "BE",
+                }
+            }
+        }
         coptic{
             eras{
                 abbreviated{
@@ -1115,6 +1143,17 @@ ur{
             }
         }
         hebrew{
+            eras{
+                abbreviated{
+                    "AM",
+                }
+                narrow{
+                    "AM",
+                }
+                wide{
+                    "AM",
+                }
+            }
             monthNames{
                 format{
                     abbreviated{
@@ -1279,9 +1318,9 @@ ur{
                         "محرم",
                         "صفر",
                         "ربیع الاوّل",
-                        "ربیع الثّانی",
+                        "ربیع الثانی",
                         "جمادی الاوّل",
-                        "جمادی الثّانی",
+                        "جمادی الثانی",
                         "رجب",
                         "شعبان",
                         "رمضان",
@@ -1337,6 +1376,17 @@ ur{
             }
         }
         persian{
+            eras{
+                abbreviated{
+                    "AP",
+                }
+                narrow{
+                    "AP",
+                }
+                wide{
+                    "AP",
+                }
+            }
             monthNames{
                 format{
                     abbreviated{
@@ -1568,7 +1618,7 @@ ur{
                 }
                 past{
                     one{"{0} دن پہلے"}
-                    other{"{0} دنوں پہلے"}
+                    other{"{0} دن پہلے"}
                 }
             }
         }
@@ -1788,8 +1838,8 @@ ur{
         month{
             dn{"مہینہ"}
             relative{
-                "-1"{"پچھلا مہینہ"}
-                "0"{"اس مہینہ"}
+                "-1"{"گزشتہ ماہ"}
+                "0"{"اس ماہ"}
                 "1"{"اگلا مہینہ"}
             }
             relativeTime{
@@ -1805,6 +1855,11 @@ ur{
         }
         month-narrow{
             dn{"ماہ"}
+            relative{
+                "-1"{"گزشتہ ماہ"}
+                "0"{"اس ماہ"}
+                "1"{"اگلے ماہ"}
+            }
             relativeTime{
                 future{
                     one{"{0} ماہ میں"}
@@ -2178,9 +2233,9 @@ ur{
         week{
             dn{"ہفتہ"}
             relative{
-                "-1"{"پچھلے ہفتہ"}
+                "-1"{"گزشتہ ہفتے"}
                 "0"{"اس ہفتہ"}
-                "1"{"اگلے ہفتہ"}
+                "1"{"اگلے ہفتے"}
             }
             relativePeriod{"{0} کے ہفتے"}
             relativeTime{
@@ -2339,6 +2394,10 @@ ur{
             middle{"{0}، {1}"}
             start{"{0}، {1}"}
         }
+        standard-narrow{
+            2{"{0}، {1}"}
+            end{"{0}، {1}"}
+        }
         standard-short{
             2{"{0} اور {1}"}
             end{"{0}، اور {1}"}
@@ -2346,7 +2405,7 @@ ur{
             start{"{0}، {1}"}
         }
         unit{
-            2{"{0} اور {1}"}
+            2{"{0}، {1}"}
             end{"{0}، اور {1}"}
             middle{"{0}, {1}"}
             start{"{0}, {1}"}
@@ -2365,8 +2424,8 @@ ur{
         }
     }
     measurementSystemNames{
-        UK{"سلطنت متحدہ"}
-        US{"ریاستہائے متحدہ"}
+        UK{"برطانیہ"}
+        US{"ریاست ہائے متحدہ امریکہ"}
         metric{"میٹرک"}
     }
     parse{
@@ -2383,7 +2442,7 @@ ur{
                 "[%٪﹪％]",
                 "[؉‰]",
                 "[\$﹩＄$]",
-                "[£₤]",
+                "[£₤￡]",
                 "[¥￥]",
                 "[₩￦]",
                 "[₨₹{Rp}{Rs}]",

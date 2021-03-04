@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 as{
     Keys{
         calendar{"কেলেণ্ডাৰ"}
@@ -108,6 +109,7 @@ as{
         eu{"বাস্ক"}
         ewo{"ইওন্দো"}
         fa{"ফাৰ্ছী"}
+        fa_AF{"দাৰি"}
         ff{"ফুলাহ"}
         fi{"ফিনিচ"}
         fil{"ফিলিপিনো"}
@@ -315,7 +317,7 @@ as{
         sc{"ছাৰ্ডিনিয়ান"}
         scn{"ছিচিলিয়ান"}
         sco{"স্কটছ"}
-        sd{"সিন্ধি"}
+        sd{"সিন্ধী"}
         se{"উদীচ্য ছামি"}
         seh{"ছেনা"}
         ses{"কোইৰাবোৰো চেন্নি"}
@@ -403,6 +405,14 @@ as{
         zun{"ঝুনি"}
         zxx{"কোনো ভাষা সমল নাই"}
         zza{"ঝাঝা"}
+    }
+    Languages%long{
+        zh_Hans{"সৰলীকৃত মেণ্ডাৰিন চীনা"}
+        zh_Hant{"পৰম্পৰাগত মেণ্ডাৰিন চীনা"}
+    }
+    Languages%menu{
+        yue{"চাইনিজ, কেণ্টোনীজ"}
+        zh{"চীনা, মেণ্ডাৰিন"}
     }
     Languages%short{
         az{"আজেৰি"}
@@ -544,7 +554,6 @@ as{
             tibt{"তিব্বতী অংক"}
         }
     }
-    Version{"2.1.48.17"}
     characterLabelPattern{
         all{"{0} — সকলো"}
         category-list{"{0}: {1}"}
@@ -559,6 +568,8 @@ as{
             one{"{0} ষ্ট্ৰ’ক"}
             other{"{0} ষ্ট্ৰ’ক"}
         }
+        subscript{"ছাবস্ক্ৰিপ্ট {0}"}
+        superscript{"ছুপাৰস্ক্ৰিপ্ট {0}"}
     }
     codePatterns{
         language{"ভাষা: {0}"}

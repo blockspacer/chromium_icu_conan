@@ -1,5 +1,6 @@
 ﻿// © 2016 and later: Unicode, Inc. and others.
-// License & terms of use: http://www.unicode.org/copyright.html#License
+// License & terms of use: http://www.unicode.org/copyright.html
+// Generated using tools/cldr/cldr-to-icu/build-icu-data.xml
 fil{
     Currencies{
         AED{
@@ -121,6 +122,10 @@ fil{
         CLP{
             "CLP",
             "Piso ng Chile",
+        }
+        CNH{
+            "CNH",
+            "Chinese Yuan (offshore)",
         }
         CNY{
             "CN¥",
@@ -552,7 +557,7 @@ fil{
         }
         STN{
             "STN",
-            "São Tomé & Príncipe Dobra (2018)",
+            "São Tomé & Príncipe Dobra",
         }
         SYP{
             "SYP",
@@ -692,6 +697,7 @@ fil{
         BRL{"R$"}
         BSD{"$"}
         BWP{"P"}
+        BYN{"р."}
         BZD{"$"}
         CAD{"$"}
         CLP{"$"}
@@ -708,6 +714,7 @@ fil{
         FJD{"$"}
         FKP{"£"}
         GBP{"£"}
+        GEL{"₾"}
         GIP{"£"}
         GNF{"FG"}
         GTQ{"Q"}
@@ -748,6 +755,7 @@ fil{
         PKR{"Rs"}
         PLN{"zł"}
         PYG{"₲"}
+        RON{"lei"}
         RUB{"₽"}
         RWF{"RF"}
         SBD{"$"}
@@ -756,6 +764,7 @@ fil{
         SHP{"£"}
         SRD{"$"}
         SSP{"£"}
+        STN{"Db"}
         SYP{"£"}
         THB{"฿"}
         TOP{"T$"}
@@ -895,6 +904,10 @@ fil{
         CLP{
             one{"piso ng Chile"}
             other{"piso ng Chile"}
+        }
+        CNH{
+            one{"Chinese yuan (offshore)"}
+            other{"Chinese yuan (offshore)"}
         }
         CNY{
             one{"Chinese yuan"}
@@ -1425,5 +1438,4 @@ fil{
         one{"{0} {1}"}
         other{"{0} {1}"}
     }
-    Version{"2.1.49.82"}
 }
