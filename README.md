@@ -66,12 +66,12 @@ See examples:
 verify filters.json using jsonschemavalidator.net and (remove comments) https://github.com/unicode-org/icu/blob/release-64-2/icu4c/source/data/buildtool/filtration_schema.json
 
 ```bash
-git clone -brelease-68-2 https://github.com/unicode-org/icu.git icu64
+pip3 install --index-url=https://pypi.python.org/simple/ --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org wheel \
+  --user hjson jsonschema
+git clone -brelease-68-1 https://github.com/unicode-org/icu.git icu64
 cd icu64/icu4c
 PROJ_ROOT=${PWD}
 ls -artl ${PROJ_ROOT}
-pip3 install --index-url=https://pypi.python.org/simple/ --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org wheel \
-  --user hjson jsonschema
 ICUROOT=${PROJ_ROOT}/
 ls -artl ${ICUROOT}
 cd ${ICUROOT}
@@ -105,7 +105,7 @@ see:
  - http://userguide.icu-project.org/howtouseicu#TOC-C-With-Your-Own-Build-System
  - http://userguide.icu-project.org/icudata
  - http://cldr.unicode.org/development/development-process/design-proposals/specifying-text-break-variants-in-locale-ids
- - https://github.com/unicode-org/icu/tree/release-68-2
+ - https://github.com/unicode-org/icu/tree/release-68-1
  - https://github.com/blockspacer/cobalt-clone-28052019/blob/89664d116629734759176d820e9923257717e09c/src/third_party/icu/README.chromium#L26
  - https://github.com/blockspacer/cobalt-clone-28052019/blob/89664d116629734759176d820e9923257717e09c/src/third_party/icu/scripts/accept_lang.list
  - http://userguide.icu-project.org/icufaq#TOC-How-can-I-reduce-the-size-of-the-ICU-data-library-
