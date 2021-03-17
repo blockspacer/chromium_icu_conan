@@ -55,8 +55,6 @@ class ListFormatterTest : public IntlTestWithFieldPosition {
     void TestBadStylesFail();
     void TestCreateStyled();
     void TestContextual();
-    void TestNextPosition();
-    void TestInt32Overflow();
 
   private:
     void CheckFormatting(

@@ -16,10 +16,6 @@
 *   created by: Umesh P. Nair
 */
 
-#include "unicode/utypes.h"
-
-#if !UCONFIG_NO_FORMATTING
-
 #include "cmemory.h"
 #include "unicode/fpositer.h"  // FieldPositionIterator
 #include "unicode/listformatter.h"
@@ -175,21 +171,21 @@ PatternHandler* createPatternHandler(
     UErrorCode& status) {
     if (uprv_strcmp(lang, "es") == 0) {
         // Spanish
-        UnicodeString spanishYStr(true, spanishY, -1);
+        UnicodeString spanishYStr(TRUE, spanishY, -1);
         bool twoIsY = two == spanishYStr;
         bool endIsY = end == spanishYStr;
         if (twoIsY || endIsY) {
-            UnicodeString replacement(true, spanishE, -1);
+            UnicodeString replacement(TRUE, spanishE, -1);
             return new ContextualHandler(
                 shouldChangeToE,
                 twoIsY ? replacement : two, two,
                 endIsY ? replacement : end, end, status);
         }
-        UnicodeString spanishOStr(true, spanishO, -1);
+        UnicodeString spanishOStr(TRUE, spanishO, -1);
         bool twoIsO = two == spanishOStr;
         bool endIsO = end == spanishOStr;
         if (twoIsO || endIsO) {
-            UnicodeString replacement(true, spanishU, -1);
+            UnicodeString replacement(TRUE, spanishU, -1);
             return new ContextualHandler(
                 shouldChangeToU,
                 twoIsO ? replacement : two, two,
@@ -197,11 +193,11 @@ PatternHandler* createPatternHandler(
         }
     } else if (uprv_strcmp(lang, "he") == 0 || uprv_strcmp(lang, "iw") == 0) {
         // Hebrew
-        UnicodeString hebrewVavStr(true, hebrewVav, -1);
+        UnicodeString hebrewVavStr(TRUE, hebrewVav, -1);
         bool twoIsVav = two == hebrewVavStr;
         bool endIsVav = end == hebrewVavStr;
         if (twoIsVav || endIsVav) {
-            UnicodeString replacement(true, hebrewVavDash, -1);
+            UnicodeString replacement(TRUE, hebrewVavDash, -1);
             return new ContextualHandler(
                 shouldChangeToVavDash,
                 twoIsVav ? replacement : two, two,
@@ -242,6 +238,7 @@ ListFormatInternal(const ListFormatInternal &other) :
 };
 
 
+#if !UCONFIG_NO_FORMATTING
 class FormattedListData : public FormattedValueStringBuilderImpl {
 public:
     FormattedListData(UErrorCode&) : FormattedValueStringBuilderImpl(kUndefinedField) {}
@@ -251,6 +248,7 @@ public:
 FormattedListData::~FormattedListData() = default;
 
 UPRV_FORMATTED_VALUE_SUBCLASS_AUTO_IMPL(FormattedList)
+#endif
 
 
 static Hashtable* listPatternHash = nullptr;
@@ -259,7 +257,7 @@ U_CDECL_BEGIN
 static UBool U_CALLCONV uprv_listformatter_cleanup() {
     delete listPatternHash;
     listPatternHash = nullptr;
-    return true;
+    return TRUE;
 }
 
 static void U_CALLCONV
@@ -352,6 +350,7 @@ const ListFormatInternal* ListFormatter::getListFormatInternal(
     return result;
 }
 
+#if !UCONFIG_NO_FORMATTING
 static const char* typeWidthToStyleString(UListFormatterType type, UListFormatterWidth width) {
     switch (type) {
         case ULISTFMT_TYPE_AND:
@@ -395,6 +394,7 @@ static const char* typeWidthToStyleString(UListFormatterType type, UListFormatte
 
     return nullptr;
 }
+#endif
 
 static const UChar solidus = 0x2F;
 static const UChar aliasPrefix[] = { 0x6C,0x69,0x73,0x74,0x50,0x61,0x74,0x74,0x65,0x72,0x6E,0x2F }; // "listPattern/"
@@ -515,9 +515,14 @@ ListFormatter* ListFormatter::createInstance(UErrorCode& errorCode) {
 }
 
 ListFormatter* ListFormatter::createInstance(const Locale& locale, UErrorCode& errorCode) {
+#if !UCONFIG_NO_FORMATTING
     return createInstance(locale, ULISTFMT_TYPE_AND, ULISTFMT_WIDTH_WIDE, errorCode);
+#else
+    return createInstance(locale, "standard", errorCode);
+#endif
 }
 
+#if !UCONFIG_NO_FORMATTING
 ListFormatter* ListFormatter::createInstance(
         const Locale& locale, UListFormatterType type, UListFormatterWidth width, UErrorCode& errorCode) {
     const char* style = typeWidthToStyleString(type, width);
@@ -527,6 +532,7 @@ ListFormatter* ListFormatter::createInstance(
     }
     return createInstance(locale, style, errorCode);
 }
+#endif
 
 ListFormatter* ListFormatter::createInstance(const Locale& locale, const char *style, UErrorCode& errorCode) {
     const ListFormatInternal* listFormatInternal = getListFormatInternal(locale, style, errorCode);
@@ -567,7 +573,7 @@ public:
                 start,
                 {UFIELD_CATEGORY_LIST, ULISTFMT_ELEMENT_FIELD},
                 status);
-            data->appendSpanInfo(0, start.length(), status);
+            data->appendSpanIndex(0);
         }
     }
 
@@ -603,7 +609,7 @@ public:
                 next,
                 {UFIELD_CATEGORY_LIST, ULISTFMT_ELEMENT_FIELD},
                 status);
-            data->appendSpanInfo(position, next.length(), status);
+            data->appendSpanIndex(position);
             data->getStringRef().append(
                 temp.tempSubString(offsets[1]),
                 {UFIELD_CATEGORY_LIST, ULISTFMT_LITERAL_FIELD},
@@ -622,7 +628,7 @@ public:
                 next,
                 {UFIELD_CATEGORY_LIST, ULISTFMT_ELEMENT_FIELD},
                 status);
-            data->prependSpanInfo(position, next.length(), status);
+            data->prependSpanIndex(position);
             data->getStringRef().insert(
                 0,
                 temp.tempSubStringBetween(0, offsets[1]),
@@ -654,6 +660,7 @@ UnicodeString& ListFormatter::format(
         int32_t index,
         int32_t &offset,
         UErrorCode& errorCode) const {
+#if !UCONFIG_NO_FORMATTING
     int32_t initialOffset = appendTo.length();
     auto result = formatStringsToValue(items, nItems, errorCode);
     UnicodeStringAppendable appendable(appendTo);
@@ -664,9 +671,11 @@ UnicodeString& ListFormatter::format(
         result.nextPosition(cfpos, errorCode);
         offset = initialOffset + cfpos.getStart();
     }
+#endif
     return appendTo;
 }
 
+#if !UCONFIG_NO_FORMATTING
 FormattedList ListFormatter::formatStringsToValue(
         const UnicodeString items[],
         int32_t nItems,
@@ -732,8 +741,7 @@ FormattedList ListFormatter::formatStringsToValue(
         return FormattedList(result.data.orphan());
     }
 }
+#endif
 
 
 U_NAMESPACE_END
-
-#endif /* #if !UCONFIG_NO_FORMATTING */

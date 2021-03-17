@@ -117,12 +117,6 @@ private:
 };
 
 
-// Internal struct that must be exported for MSVC
-struct U_I18N_API SpanInfo {
-    int32_t spanValue;
-    int32_t length;
-};
-
 // Export an explicit template instantiation of the MaybeStackArray that
 //    is used as a data member of CEBuffer.
 //
@@ -132,7 +126,7 @@ struct U_I18N_API SpanInfo {
 // See digitlst.h, pluralaffix.h, datefmt.h, and others for similar examples.
 //
 #if U_PF_WINDOWS <= U_PLATFORM && U_PLATFORM <= U_PF_CYGWIN
-template class U_I18N_API MaybeStackArray<SpanInfo, 8>;
+template class U_I18N_API MaybeStackArray<int32_t, 8>;
 #endif
 
 /**
@@ -168,19 +162,13 @@ public:
         return fString;
     }
 
-    /**
-     * Adds additional metadata used for span fields.
-     * 
-     * spanValue: the index of the list item, for example.
-     * length: the length of the span, used to split adjacent fields.
-     */
-    void appendSpanInfo(int32_t spanValue, int32_t length, UErrorCode& status);
-    void prependSpanInfo(int32_t spanValue, int32_t length, UErrorCode& status);
+    void appendSpanIndex(int32_t index);
+    void prependSpanIndex(int32_t index);
 
 private:
     FormattedStringBuilder fString;
     FormattedStringBuilder::Field fNumericField;
-    MaybeStackArray<SpanInfo, 8> spanIndices;
+    MaybeStackArray<int32_t, 8> spanIndices;
 
     bool nextPositionImpl(ConstrainedFieldPosition& cfpos, FormattedStringBuilder::Field numericField, UErrorCode& status) const;
     static bool isIntOrGroup(FormattedStringBuilder::Field field);

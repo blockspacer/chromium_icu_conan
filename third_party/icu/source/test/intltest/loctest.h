@@ -153,7 +153,6 @@ public:
     void TestCapturingTagConvertingIterator();
     void TestSetUnicodeKeywordValueInLongLocale();
     void TestSetUnicodeKeywordValueNullInLongLocale();
-    void TestLeak21419();
 
 private:
     void _checklocs(const char* label,

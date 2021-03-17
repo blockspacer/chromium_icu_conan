@@ -362,7 +362,6 @@ U_CDECL_END
 U_CDECL_BEGIN
 static void U_CALLCONV ScanfMultipleIntegers(void)
 {
-#if !UCONFIG_NO_FORMATTING && !UCONFIG_NO_FILE_IO
     UnicodeString input = UNICODE_STRING("[1.2.3]", 7);
     UnicodeString fmt = UNICODE_STRING("[%d.%d.%d]", 10);
     DataDrivenLogger logger;
@@ -392,7 +391,6 @@ static void U_CALLCONV ScanfMultipleIntegers(void)
         log_err("error in scanfmultipleintegers test 'result'  Got: %d Exp: %d\n",
                 result, expectedResult);
     }
-#endif
 }
 U_CDECL_END
 
@@ -734,8 +732,8 @@ static void addAllTests(TestNode** root) {
     addTest(root, &DataDrivenPrintf, "datadriv/DataDrivenPrintf");
     addTest(root, &DataDrivenPrintfPrecision, "datadriv/DataDrivenPrintfPrecision");
     addTest(root, &DataDrivenScanf, "datadriv/DataDrivenScanf");
-    addTest(root, &ScanfMultipleIntegers, "ScanfMultipleIntegers");
 #endif
+    addTest(root, &ScanfMultipleIntegers, "ScanfMultipleIntegers");
     addStreamTests(root);
 }
 
