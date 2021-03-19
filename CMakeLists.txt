@@ -331,6 +331,7 @@ endif(NOT EXISTS "${ICU_FULL_DIR}source/common")
 
   if(TARGET_EMSCRIPTEN)
     list(APPEND ICU_PUBLIC_DEFINES
+      UCONFIG_NO_FILE_IO=1
       U_ENABLE_DYLOAD=0
       U_CHECK_DYLOAD=0
       UCONFIG_ONLY_HTML_CONVERSION=1
@@ -417,17 +418,22 @@ endif(DISABLE_FORMATTING)
 # see https://github.com/sillsdev/icu-dotnet/wiki/Making-a-minimal-build-for-ICU58-or-later
   # http://userguide.icu-project.org/howtouseicu#TOC-C-With-Your-Own-Build-System
   list(APPEND ICU_PUBLIC_DEFINES
+    U_ENABLE_TRACING=1
+    U_ENABLE_RESOURCE_TRACING=0
     U_ENABLE_DYLOAD=0
     ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE
     #ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_STATIC
     LIB_ICU_I18N_STATIC=1
     # see http://site.icu-project.org/repository/tips/linux
     U_CHARSET_IS_UTF8=1
-    U_HAVE_STD_STRING=1 # obsolete (ICU-12736)
+    #U_HAVE_STD_STRING=1 # obsolete (ICU-12736)
     # UCONFIG_ONLY_COLLATION=1 # NOTE: also disables break iteration!
-    UCONFIG_NO_FILE_IO=1
+    #UCONFIG_NO_FILE_IO=1
     # see http://userguide.icu-project.org/packaging
-    UCONFIG_NO_LEGACY_CONVERSION=1
+    #UCONFIG_NO_LEGACY_CONVERSION=1
+    #UCONFIG_ONLY_HTML_CONVERSION=1
+    UCONFIG_USE_WINDOWS_LCID_MAPPING_API=0
+    U_USING_ICU_NAMESPACE=0
     #
     # If U_NO_DEFAULT_INCLUDE_UTF_HEADERS is 0 then utf.h is
     # included by utypes.h and itself includes utf8.h
@@ -438,7 +444,7 @@ endif(DISABLE_FORMATTING)
     # SEE: http://icu-project.org/apiref/icu4c/utf_8h.html
     # U_NO_DEFAULT_INCLUDE_UTF_HEADERS=1 # see U16_NEXT in base/i18n
     #
-    U_HIDE_OBSOLETE_UTF_OLD_H=1 # utf_old.h is deprecated or obsolete, ICU>60
+    #U_HIDE_OBSOLETE_UTF_OLD_H=1 # utf_old.h is deprecated or obsolete, ICU>60
   )
 
   set(ICU_PRIVATE_DEFINES
@@ -455,14 +461,14 @@ endif(DISABLE_FORMATTING)
     )
   elseif(TARGET_EMSCRIPTEN)
     # keep default value i.e. char16_t
-    #list(APPEND ICU_PUBLIC_DEFINES
-    #  UCHAR_TYPE=uint16_t
-    #)
+    list(APPEND ICU_PUBLIC_DEFINES
+      UCHAR_TYPE=char16_t
+    )
   else()
     # keep default value i.e. char16_t
-    #list(APPEND ICU_PUBLIC_DEFINES
-    #  UCHAR_TYPE=uint16_t
-    #)
+    list(APPEND ICU_PUBLIC_DEFINES
+      UCHAR_TYPE=char16_t
+    )
   endif()
 
   # see https://github.com/webrtc-uwp/chromium-build/blob/master/linux/unbundle/icu.gn#L37
