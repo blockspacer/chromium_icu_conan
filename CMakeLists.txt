@@ -223,8 +223,6 @@ endif(NOT EXISTS "${ICU_FULL_DIR}source/common")
 
   add_relative_include_dir(${STATIC_LIB_NAME} PUBLIC PUBLIC "third_party/icu/source/tools")
 
-  set_property(TARGET ${STATIC_LIB_NAME} PROPERTY CXX_STANDARD 17)
-
   # POSITION_INDEPENDENT_CODE for -fPIC
   # -fPIC may be used to link static library into dynamic one
   # Position-independent code requires special support,
@@ -455,23 +453,22 @@ endif(DISABLE_FORMATTING)
     HAVE_DLFCN_H=0
   )
 
-  if (WIN32)
-    list(APPEND ICU_PUBLIC_DEFINES
-      UCHAR_TYPE=wchar_t
-    )
-  elseif(TARGET_EMSCRIPTEN)
-    # keep default value i.e. char16_t
-    list(APPEND ICU_PUBLIC_DEFINES
-      UCHAR_TYPE=char16_t
-    )
-  else()
-    # keep default value i.e. char16_t
-    list(APPEND ICU_PUBLIC_DEFINES
-      UCHAR_TYPE=char16_t
-    )
-  endif()
-
-  # see https://github.com/webrtc-uwp/chromium-build/blob/master/linux/unbundle/icu.gn#L37
+  # U_EXPORT (defined in unicode/platform.h) is used to set public visibility
+  # on classes through the U_COMMON_API and U_I18N_API macros (among others).
+  # When linking against the system ICU library, we want its symbols to have
+  # public LTO visibility. This disables CFI checks for the ICU classes and
+  # allows whole-program optimization to be applied to the rest of Chromium.
+  #
+  # Both U_COMMON_API and U_I18N_API macros would be defined to U_EXPORT only
+  # when U_COMBINED_IMPLEMENTATION is defined (see unicode/utypes.h). Because
+  # we override the default system UCHAR_TYPE (char16_t), it is not possible
+  # to use U_COMBINED_IMPLEMENTATION at this moment, meaning the U_COMMON_API
+  # and U_I18N_API macros are set to U_IMPORT which is an empty definition.
+  #
+  # Until building with UCHAR_TYPE=char16_t is supported, one way to apply
+  # public visibility (and thus public LTO visibility) to all ICU classes is
+  # to define U_IMPORT to have the same value as U_EXPORT. For more details,
+  # please see: https://crbug.com/822820
   list(APPEND ICU_PUBLIC_DEFINES
     U_IMPORT=U_EXPORT
   )
@@ -547,6 +544,8 @@ endif(DISABLE_FORMATTING)
 #  set(ICU_DEFINES "${ICU_DEFINES} -D__i386__=1")
 #endif()
 
+set_property(TARGET ${STATIC_LIB_NAME} PROPERTY C_EXTENSIONS ON)
+set_property(TARGET ${STATIC_LIB_NAME} PROPERTY C_STANDARD 11)
 set_property(TARGET ${STATIC_LIB_NAME} PROPERTY CXX_STANDARD 17)
 
 set(DEBUG_LIBRARY_SUFFIX "-d")
