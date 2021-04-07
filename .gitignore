@@ -47,3 +47,4 @@ tmp/
 *~
 *.directory
 /third_party/icu/build
+/CMakeLists.txt.user
