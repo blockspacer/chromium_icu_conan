@@ -305,7 +305,7 @@ endif(NOT EXISTS "${ICU_FULL_DIR}source/common")
   endif(ENABLE_UBSAN)
 
   if(TARGET_EMSCRIPTEN)
-    # use PROPERTY CXX_STANDARD 17
+    # use PROPERTY compiler.cppstd
   else()
     target_compile_features(${STATIC_LIB_NAME}
       PUBLIC cxx_auto_type
@@ -546,7 +546,7 @@ endif(DISABLE_FORMATTING)
 
 set_property(TARGET ${STATIC_LIB_NAME} PROPERTY C_EXTENSIONS ON)
 set_property(TARGET ${STATIC_LIB_NAME} PROPERTY C_STANDARD 11)
-set_property(TARGET ${STATIC_LIB_NAME} PROPERTY CXX_STANDARD 17)
+#set_property(TARGET ${STATIC_LIB_NAME} PROPERTY CXX_STANDARD 17)
 
 set(DEBUG_LIBRARY_SUFFIX "-d")
 set_target_properties(${STATIC_LIB_NAME}
